@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>現在地の表示</title>
+	<link rel="stylesheet" type="text/css" href="css/planking.css"  />
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry"></script>
+	<script type="text/javascript" src="./js/getcsv.js"></script>
+	<script type="text/javascript" src="/js/camera.js"></script>
+</head>
+<body onload="start_func()">
+	<canvas id="canvassample" width="480" height="800"></canvas>
+	<div id="area_name">
+		<img src="img/load.gif" alt="" />loading
+	</div>
+
+	<a href="map.html" class="backButton">戻る</a>
+</body>
+</html>

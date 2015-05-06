@@ -1,0 +1,143 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:500);
+html {
+	height: 100%;
+	 }
+body {
+	width:100%;
+	height: 100%;
+	margin: 0;
+	padding: 0 ;
+	}
+#map_canvas {
+	height: 80%;
+	}
+
+.menu{
+	width:100%;
+	height:20%;
+	margin: auto 0 auto;
+	z-index: 100;
+	position: absolute;
+	left:0;
+	bottom:0;
+	box-shadow: 0 -3px 8px #aaa;
+}
+.menu:after{
+	content: " ";
+	display: block;
+	width:20%;
+	height:100%;
+	left:40%;
+	bottom:0;
+	z-index: 100;
+	position: relative;
+	/*background: url(../img/bg_bear.png) no-repeat center bottom;*/
+}
+.pointBox,
+.cameraBox{
+	display: block;
+	width:50%;
+	height:100%;
+	position: absolute;
+	}
+#returnBox{
+	display: block;
+	width:50%;
+	height:100%;
+	position: absolute;
+	}
+
+.pointBox{
+	top:0;
+	left:0;
+	background:#6EC3C0;
+	color: #fff;
+	background:url(../img/bg_point.png) no-repeat center center #6EC3C0;
+	background-size:contain;
+}
+.pointBox p{
+	width:100%;
+	text-align: center;
+	font-size:50px;
+	line-height:50px;
+	font-family: 'Roboto', sans-serif;
+	display: 0;
+	position: absolute;
+	z-index: 100;
+	letter-spacing: -0.05em;
+}
+
+.cameraBox{
+	margin-left:0px;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	top:0;
+	left:50%;
+}
+#returnBox{
+	margin-left:0px;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	top:0;
+	left:50%;
+}
+
+#returnBox a{
+	display: block;
+	height:0px;
+	padding-top:170px;
+	overflow: hidden;
+	background:url(../img/Back.png) no-repeat right center #F6645F;
+	background-size:contain;
+}
+#returnBox a:hover{
+	background:url(../img/Back.png) no-repeat center center #EA3932;
+	background-size:contain;
+}
+.cameraBox a{
+	display: block;
+	height:100%;
+	overflow: hidden;
+	background:url(../img/bg_camera.png) no-repeat center center #F6645F;
+	background-size:contain;
+}
+.cameraBox a:hover{
+	background:url(../img/bg_camera.png) no-repeat center center #EA3932;
+	background-size:contain;
+}
+#area_name{
+	width: 70%;
+	height: 170px;
+	color:#fff;
+	text-align: center;
+	font-size:70px;
+	line-height:170px;
+	font-family: 'Roboto', sans-serif;
+	position: absolute;
+	bottom:0;
+	right:0;
+	z-index: 100;
+	background:/*url(../img/bg_point_get.png) no-repeat center center*/ #6EC3C0;
+	box-shadow: 0 -3px 8px #aaa;
+	}
+
+	.backButton{
+		z-index: 100;
+		position:absolute;
+		bottom:0;
+		left:0;
+		width:30%;
+		height:0;
+		padding-top:170px;
+		text-decoration:none;
+		text-align: center;
+		color:#fff;
+		display: block;
+		overflow: hidden;
+	box-shadow: 0 -3px 8px #aaa;
+	background:url(../img/bg_back.png) no-repeat center center #308C89;
+	background-size:contain;
+	}
+		.backButton:hover{
+			background-color:#216A68;
+		}

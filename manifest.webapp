@@ -1,0 +1,40 @@
+{
+  "name": "planking",
+  "description": "plankingapp",
+  "activities": {
+    "view": {
+      "filters": {
+        "type": "url",
+        "url": {
+          "required": true,
+          "regexp":"/^https?:/"
+        }
+      }
+    }
+  },
+
+  "launch_path":"/start.html",
+  "developer":{
+    "name":"planking_team",
+    "url":"http://www.ric.cp.jp/book/contents/book_921.html"
+  },
+
+  "locales":{
+    "en-US":{
+      "name":"planking",
+      "description": "plankingapp"
+    }
+  },
+
+	"default_locale":"en-US",
+	"icons":{
+    "128":"/style/icons/icon.png"
+	},
+	"permissions": {
+      "geolocation": {
+         "description": "Required to schedule notifications"
+      }
+  },
+  "csp":
+    "default-src *; script-src 'self', 'facebook.com'; object-src 'none'; style-src 'self'"
+}
