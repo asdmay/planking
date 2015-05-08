@@ -101,7 +101,13 @@ function initialize(x,y) {
     	title:"Your position",
 	draggable: true//マーカーを動かせるようにする
     });
-
+    google.maps.event.addListener(marker, 'dragend', function(ev){
+	var pos = marker.getPosition();
+	var lat = pos.lat();
+	var lng = pos.lng();
+	alert("緯度"+lat+" 経度"+lng);
+    });
+    
     var min;
 	var count;
 
