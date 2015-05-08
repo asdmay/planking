@@ -102,11 +102,7 @@ function initialize(x,y) {
 	draggable: true//マーカーを動かせるようにする
     });
     google.maps.event.addListener(marker, 'dragend', function(ev){
-	var pos = marker.getPosition();
-	var lat = pos.lat();
-	var lng = pos.lng();
-	var point = checkHajiraiPoint(lat, lng);
-	document.getElementById("point_get").innerHTML = point;
+	updateHajiraiPoint();
     });
 
     function checkHajiraiPoint(lat, lng) {
@@ -127,8 +123,16 @@ function initialize(x,y) {
 	}
 	return point;
     }
-    
-    document.getElementById("point_get").innerHTML = point;
+
+    function updateHajiraiPoint() {
+	var pos = marker.getPosition();
+	var lat = pos.lat();
+	var lng = pos.lng();
+	var point = checkHajiraiPoint(lat, lng);
+	document.getElementById("point_get").innerHTML = point;
+    }
+
+    updateHajiraiPoint();
 }
 
 
