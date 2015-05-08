@@ -28,7 +28,7 @@ function get_location(){
         navigator.geolocation.getCurrentPosition
         (successCallback,errorCallback);
     } else {
-        console.log("error")
+        console.log("error");
     }
 }
 // ( 2 )位置情報が正常に取得されたら
@@ -98,9 +98,11 @@ function initialize(x,y) {
     var marker = new google.maps.Marker({
     	position: myLatlng,
     	map: map,
-    	title:"Your position"
+    	title:"Your position",
+	draggable: true//マーカーを動かせるようにする
     });
-    	var min;
+
+    var min;
 	var count;
 
 	for( var i = 0; i < citymap.length; i++){
@@ -114,7 +116,7 @@ function initialize(x,y) {
    		 		count = i;
    		 	}
    		 }
-   	}
+   	}//一番近い大阪の集客数の多いところを表示させる
 
     var radius = Math.sqrt(citymap[count].area/Math.PI);
 	var point = 0;
