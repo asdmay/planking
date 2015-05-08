@@ -129,6 +129,9 @@ function initialize(x,y) {
 	var lat = pos.lat();
 	var lng = pos.lng();
 	var point = checkHajiraiPoint(lat, lng);
+	localStorage.setItem("lat",lat);
+	localStorage.setItem("lng",lng);
+	localStorage.setItem("point",point);
 	document.getElementById("point_get").innerHTML = point;
     }
 
