@@ -105,36 +105,30 @@ function initialize(x,y) {
 	var pos = marker.getPosition();
 	var lat = pos.lat();
 	var lng = pos.lng();
-	alert("緯度"+lat+" 経度"+lng);
+	var point = checkHajiraiPoint(lat, lng);
+	document.getElementById("point_get").innerHTML = point;
     });
-    
-    var min;
-	var count;
 
+    function checkHajiraiPoint(lat, lng) {
+	var min = Number.MAX_VALUE;
+	var min_i = 0;
+	
 	for( var i = 0; i < citymap.length; i++){
-		var distance = google.maps.geometry.spherical.computeDistanceBetween(citymap[i].center, myLatlng);
-		if( i == 0 ){
-			min = distance;
-			count = i;
-   		 } else {
-   		 	if( min > distance ){
-   		 		min = distance;
-   		 		count = i;
-   		 	}
-   		 }
-   	}//一番近い大阪の集客数の多いところを表示させる
-
-    var radius = Math.sqrt(citymap[count].area/Math.PI);
+	    var distance = google.maps.geometry.spherical.computeDistanceBetween(citymap[i].center, new google.maps.LatLng(lat, lng));
+  	    if( min > distance ){
+ 		min = distance;
+   		min_i = i;
+   	    }
+	}//一番近い大阪の集客数の多いところを表示させる
+	var radius = Math.sqrt(citymap[min_i].area/Math.PI);
 	var point = 0;
-    if(min<radius){
-
-      point = citymap[count].population;
+	if(min<radius){
+	    point = citymap[min_i].population;
+	}
+	return point;
     }
-
-     document.getElementById("point_get").innerHTML = point;
-
-
-
+    
+    document.getElementById("point_get").innerHTML = point;
 }
 
 
